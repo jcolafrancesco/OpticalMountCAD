@@ -13,11 +13,11 @@ bigst_elt_height = 40;
 /* [Lens Parameters] */
 // First radius
 r1 = 25;
-// Is first radius infinity?
+// Is first radius Infinite?
 r1_inf = false;
 // Second radius
 r2 = 30; //0.01
-// Is second radius infinity?
+// Is second radius Infinite?
 r2_inf = true;
 // Center thickness
 ct = 4.01;
@@ -25,6 +25,8 @@ ct = 4.01;
 width = 20; //0.01
 // Refractive Index
 n = 1.5;
+// Optical alignement
+align_reference = "H2"; // [H1, H2, ct/2]
 // Function to compute lens sagitta
 function sagitta(r, w) = let(ar = abs(r)) ar - sqrt(ar*ar - pow(w/2,2));
 // Sagitta 1
@@ -103,9 +105,18 @@ reference_height = bigst_elt_height / 2 + base_height;
 optic_height = optic_type == "Plate" ? plate_height : ((optic_type == "Cylindrical Lens") && cyl_orient == "h" ? cyl_height : width);
 optic_center = optic_type == "Plate" ? 0 : ((optic_type == "Cylindrical Lens") && cyl_orient == "h" ? cp : ep);
 optic_thickness = optic_type == "Plate" ? plate_thickness : ((optic_type == "Cylindrical Lens") && cyl_orient == "h" ? ct : et);
+alignement_translation_value = 
+    optic_type == "Plate" ?
+    0:
+        align_reference == "H1" ?
+            -ct/2 + h1 :
+            align_reference == "H2" ?
+                ct/2 - h2 :
+                0;
 
 base(base_height, base_thickness, thread_diameter, head_radius, eps);
 
+translate([alignement_translation_value, 0, 0])
 union() {
     if (lateral_arms_presence) {
         difference() {
