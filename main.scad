@@ -9,6 +9,8 @@ optic_type = "Cylindrical Lens"; // [Spherical Lens, Cylindrical Lens, Plate]
 display_optics = false;
 // Element with greatest height
 bigst_elt_height = 40;
+// Width (or diameter for spherical lenses)
+width = 20; //0.01
 
 /* [Lens Parameters] */
 // First radius
@@ -21,8 +23,6 @@ r2 = 30; //0.01
 r2_inf = true;
 // Center thickness
 ct = 4.01;
-// Width (or diameter for spherical lenses)
-width = 20; //0.01
 // Refractive Index
 n = 1.5;
 // Optical alignement
