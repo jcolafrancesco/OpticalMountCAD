@@ -1,6 +1,7 @@
 include <base_module.scad>
 include <lens_module.scad>
 include <arms_module.scad>
+include <offset3d.scad>
 
 /* [General Parameters] */
 // Optical object type
@@ -9,6 +10,8 @@ optic_type = "Cylindrical Lens"; // [Spherical Lens, Cylindrical Lens, Plate]
 display_optics = false;
 // Element with greatest height
 bigst_elt_height = 40;
+// Optical clearance in percent
+clearance = 0.25;
 // Width (or diameter for spherical lenses)
 width = 20; //0.01
 
@@ -126,6 +129,7 @@ union() {
             }
 
             translate([0, 0, reference_height])
+            offset3d(clearance)
             draw_optics();
         }
     }
@@ -148,6 +152,7 @@ union() {
             }
 
             translate([0, 0, reference_height])
+            offset3d(clearance)
             draw_optics();
         }
     }
