@@ -4,7 +4,7 @@ include <arms_module.scad>
 
 /* [General Parameters] */
 // Optical object type
-optic_type = "Plate"; // [Spherical Lens, Cylindrical Lens, Plate]
+optic_type = "Cylindrical Lens"; // [Spherical Lens, Cylindrical Lens, Plate]
 // Set to true to display the optics with the holder
 display_optics = false;
 // Element with greatest height
