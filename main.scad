@@ -82,7 +82,7 @@ fb_margin = 2;
 // Thread diameter
 thread_diameter = 6; //[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // Inter-axes spacing
-axes_spacing = 25; // [25, 25.4]
+axes_spacing = 25.0; // 0.01
 // Base height
 base_height = 5; // [1:10]
 // Radius of the srews' heads, fixed to two times the thread
