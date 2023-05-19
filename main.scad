@@ -14,7 +14,7 @@ width = 20; //0.01
 
 /* [Lens Parameters] */
 // First radius
-r1 = 25;
+r1 = 25.881;
 // Is first radius Infinite?
 r1_inf = false;
 // Second radius
