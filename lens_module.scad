@@ -1,3 +1,19 @@
+// OpticalMountCAD
+// Copyright (C) 2023 Julien Colafrancesco
+// 
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 module build_onesided_lens(r1, r2, sag1, sag2, width, ct, gt) {
     module lens_rect_superset(r1, r2, sag1, sag2, width, ct, gt) {
         translate([-(ct/2) - (r2 > 0 ? sag2 : 0), -width/2, 0])
